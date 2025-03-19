@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>List</h1>
+    <h1>List {{value}} <span class="link" @click="value++">++</span></h1>
     <ul>
       <li v-for="(item,index) in list" :key="index">
         <ProductItem :product="item" @goDetails="goDetails"></ProductItem>
@@ -13,12 +13,14 @@
 <script>
 import { useRouter } from 'vue-router';
 import ProductItem from '../components/ProductItem.vue'
-import { ref } from 'vue'
+import { ref, provide } from 'vue'
 export default {
   name: 'ItemPage',
   components: { ProductItem },
   setup() {
     const router = useRouter();
+    const value = ref(0);
+    provide('value', value);
     const list = ref([
       {id: 1, name: 'name1', age: 18},
       {id: 2, name: 'name2', age: 19},
@@ -37,6 +39,7 @@ export default {
       list,
       go,
       goDetails,
+      value
     };
   },
 };

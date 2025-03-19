@@ -4,6 +4,7 @@
     <button @click="addCount()">++++</button>
     <h1>Home</h1>
     <router-link to="/list">list</router-link> | 
+    <router-link to="/cart">cart</router-link> | 
     <router-link to="/my">my</router-link>
   </div>
 </template>

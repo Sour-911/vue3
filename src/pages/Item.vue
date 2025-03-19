@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Item {{userId}}</h1>
-    <button @click="add" class="link">按钮</button>
-    <router-link to="/">首页</router-link>
+    <button @click="add">按钮</button>
+    <div class="link" @click="retunPage">返回上一页</div>
   </div>
 </template>
 
@@ -22,11 +22,15 @@ export default {
     const add = () => {
       userId.value++
     };
+    const retunPage = () => {
+      router.go(-1)
+    }
 
     return {
       go,
       add,
-      userId
+      userId,
+      retunPage
     };
   },
   beforeCreate () {
