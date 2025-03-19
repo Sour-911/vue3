@@ -30,7 +30,7 @@ export default {
       ])
 
     const go = () => {
-      router.push('/'); // 跳转到首页
+      router.push('/') //   跳转到首页
     };
     const goDetails = (res) => {
       router.push('/item/' + res.id)
