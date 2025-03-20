@@ -1,12 +1,14 @@
 <template>
   <div class="item-box">
-    <img :src="product.imageUrl" />
-    <div class="info">
-      <h5>{{ product.title }}</h5>
-      <h3>{{ product.price }}</h3>
+    <div class="info flex">
+      <img :src="product.imageUrl" />
+      <div>
+        <h5>{{ product.productTitle }}</h5>
+        <h3>{{ product.price }}</h3>
+      </div>
     </div>
-    <div class="count">
-      <span @click="reduce" class="link">-</span> {{ product.count }} <span @click="add" class="link">+</span>
+    <div class="quantity">
+      <span @click="reduce" class="link">-</span> {{ product.quantity }} <span @click="add" class="link">+</span>
     </div>
   </div>
 </template>
@@ -30,11 +32,11 @@ export default {
     const message = inject('value');
 
     const add = () => {
-      product.count++;
+      product.quantity++;
     };
 
     const reduce = () => {
-      product.count--;
+      if (product.quantity>1) product.quantity--;
     };
 
     return {
@@ -58,7 +60,7 @@ export default {
     height: 100px;
     margin-right: 5px;
   }
-  .count {
+  .quantity {
   	padding-left: 10px;
   }
 }

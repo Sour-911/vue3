@@ -19,3 +19,6 @@ a, img {
   user-select: none;
   text-align: center;
 }
+.flex {
+  display: flex;
+}

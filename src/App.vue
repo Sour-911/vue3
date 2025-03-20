@@ -2,7 +2,7 @@
   <div>
     <Login/>
     <router-view style="position: fixed;z-index: 9;background: rgba(0, 0, 0, 0.5);color: white;padding: 10px"/>
-    <iframe src="https://detail.1688.com/offer/847529853148.html" style="width: 100%;height: 1000px;border: none;"></iframe>
+    <!-- <iframe src="https://detail.1688.com/offer/847529853148.html" style="width: 100%;height: 1000px;border: none;"></iframe> -->
   </div>
 </template>
 
