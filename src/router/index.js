@@ -5,6 +5,7 @@ import List from '@/pages/List.vue';
 import Item from '@/pages/Item.vue';
 import My from '@/pages/My.vue';
 import Cart from '@/pages/Cart.vue';
+import Login from '@/pages/Login.vue';
 import store from '@/store'
 
 const routes = [
@@ -30,6 +31,10 @@ const routes = [
   {
     path: '/cart',
     component: Cart,
+  },
+  {
+    path: '/login',
+    component: Login,
   },
 
 ];
