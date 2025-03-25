@@ -13,6 +13,7 @@
       <button type="submit">Login</button>
     </form>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+    <input @input="inputE()"/>
   </div>
 </template>
 
@@ -53,12 +54,23 @@ export default {
         errorMessage.value = 'Login failed. Please check your credentials.';
       }
     };
+    const inputE = () => {
+      let timeoutId = null;
+      return function () {
+        console.log(1)
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(()=>{
+          console.log('防抖')
+        }, 1000)
+      }
+    };
 
     return {
       username,
       password,
       errorMessage,
       handleLogin,
+      inputE
     };
   },
 };
